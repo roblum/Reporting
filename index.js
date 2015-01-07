@@ -15,6 +15,8 @@ app.use(express.static(__dirname + '/public'));
 
 app.post('/home', function(request, response) {
   response.send('Hello World!');
+  // response.send(request);
+  console.log(request.query);
   // response.send(url);
      // connection.connect();
 
