@@ -13,9 +13,10 @@ var connection = mysql.createConnection({
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-app.post('/home', function(request, response) {
+app.post('/report', function(request, response) {
   response.send('Hello World!');
   // response.send(request);
+  // console.log(request.query);
   console.log(request.query);
   // response.send(url);
      // connection.connect();
