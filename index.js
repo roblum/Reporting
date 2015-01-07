@@ -17,17 +17,19 @@ app.post('/report', function(request, response) {
   response.send('Hello World!');
   // response.send(request);
   // console.log(request.query);
-  console.log(request.query);
+  // console.log(request.query);
   // response.send(url);
-     // connection.connect();
+     connection.connect();
+     var reqDomain = request.query.domain
+     var insertion = 'INSERT into heroku_b060aa6180054ee.reporting(id, domain, count)' +
+                    'VALUES (1,' + reqDomain + ', 2)';
 
-     // connection.query('SELECT * FROM heroku_b060aa6180054ee.test', function(err, result) {
-     //      if (err) throw err;
+     connection.query(insertion, function(err, result) {
+          if (err) throw err;
 
-     //      console.log(result);
-     // });
+     });
 
-     // connection.end();
+     connection.end();
 });
 
 app.listen(app.get('port'), function() {
