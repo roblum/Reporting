@@ -19,6 +19,7 @@ app.post('/report', cors(), function(request, response) {
 
      connection.connect();
      var reqDomain = request.query.domain
+     console.log(reqDomain);
      var insertion = 'INSERT into heroku_b060aa6180054ee.reporting(id, domain, count) ' +
                     'VALUES (1, ' + reqDomain + ', 2)';
 
