@@ -9,7 +9,8 @@
   "dependencies": {
     "express": "~4.9.x",
     "node-mysql" : "*",
-    "mysql" : "2.0.0"
+    "mysql" : "2.0.0",
+    "cors" : "*"
   },
   "devDependencies" :{
     "nodemon" : "*"
