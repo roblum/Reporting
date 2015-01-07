@@ -1,5 +1,22 @@
 var express = require('express');
 var app = express();
+var mysql      = require('mysql');
+
+var connection = mysql.createConnection({
+  host     : 'https://salty-chamber-3826.herokuapp.com/',
+  user     : 'b1d6e2f45de4e9',
+  password : 'ee212855'
+});
+
+connection.connect();
+
+connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+  if (err) throw err;
+
+  console.log('The solution is: ', rows[0].solution);
+});
+
+connection.end();
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
