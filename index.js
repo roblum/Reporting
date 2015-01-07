@@ -2,13 +2,11 @@ var express = require('express');
 var app = express();
 var mysql      = require('mysql');
 
-console.log('mysql');
-console.log(mysql);
+console.log('mysql', mysql);
 var connection = mysql.createConnection({
   host     : 'us-cdbr-iron-east-01.cleardb.net',
   user     : 'b1d6e2f45de4e9',
   password : 'ee212855',
-
 });
 
 connection.connect();
