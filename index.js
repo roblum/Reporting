@@ -38,7 +38,7 @@ function writeToDB(reqDomain, connection){
 
      connection.query(insertion, function(err, result){
           if (err) throw err;
-
+          console.log('test');
           connection.end();
      });
 }
