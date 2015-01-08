@@ -16,8 +16,9 @@ app.post('/report', cors(), function(request, response) {
 
      var connection = sql_connect.connect();
      var reqDomain  = request.query.domain
+     var version    = request.query.version
 
-     DB.searchDB(reqDomain, connection);
+     DB.searchDB(reqDomain, connection, version);
 });
 
 app.listen(app.get('port'), function() {
