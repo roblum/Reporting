@@ -1,6 +1,6 @@
 var express         = require('express');
 var app             = express();
-var sql_connect     = require('./sql_connection.js');
+var sql_connect     = require('./controllers/sql_connection.js');
 var cors            = require('cors');
 
 app.set('port', (process.env.PORT || 5000));
