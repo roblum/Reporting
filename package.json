@@ -10,7 +10,8 @@
     "express": "~4.9.x",
     "node-mysql" : "*",
     "mysql" : "2.0.0",
-    "cors" : "*"
+    "cors" : "*",
+    "aws-sdk": "*"
   },
   "devDependencies" :{
     "nodemon" : "*"
