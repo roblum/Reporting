@@ -21,14 +21,15 @@ exports.searchDB = function(reqDomain, connection, table){
 exports.reportsDB = function(connection, table, callback){
      var select = 'SELECT * FROM ' + SQL_DB + '.' + table;
 
-     var result = connection.query(select, function(err, result){
+     connection.query(select, function(err, result){
           if (err) throw err;
           console.log('inside result', result);
-          return result;
+
+          connection.end();
+          callback(result);
      });
 
-     connection.end();
-     callback(result);
+
 }
 
 function writeToDB(reqDomain, connection, table){

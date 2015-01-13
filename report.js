@@ -17,6 +17,7 @@ var connection = sql_connect.connect();
 DB.reportsDB(connection, 'version1', s3Upload)
 
 function s3Upload(result){
+     console.log(result);
      var body = JSON.stringify(result);
      console.log('body', body);
 
