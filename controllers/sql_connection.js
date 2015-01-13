@@ -1,11 +1,15 @@
 var mysql      = require('mysql');
+var SQL_HOST   = process.env.SQL_HOST;
+var SQL_USER   = process.env.SQL_USER;
+var SQL_PASS   = process.env.SQL_PASS;
+var SQL_DB     = process.env.SQL_DB;
 
 exports.connect = function(){
      var connection = mysql.createConnection({
-          host     : 'us-cdbr-iron-east-01.cleardb.net',
-          user     : 'b1d6e2f45de4e9',
-          password : 'ee212855',
-          database : 'heroku_b060aa6180054ee'
+          host     : SQL_HOST,
+          user     : SQL_USER,
+          password : SQL_PASS,
+          database : SQL_DB
      });
 
      return connection;
