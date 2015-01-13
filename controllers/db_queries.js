@@ -23,7 +23,6 @@ exports.reportsDB = function(connection, table, callback){
 
      connection.query(select, function(err, result){
           if (err) throw err;
-          console.log('inside result', result);
 
           connection.end();
           callback(result);

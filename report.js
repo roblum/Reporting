@@ -14,12 +14,11 @@ var s3              = new AWS.S3();
 var date            = new Date().toDateString().replace(/\s/g, '_');
 
 var connection = sql_connect.connect();
-DB.reportsDB(connection, 'version1', s3Upload)
+// DB.reportsDB(connection, 'version1', s3Upload)
+DB.reportsDB(connection, 'version2', s3Upload)
 
 function s3Upload(result){
-     console.log(result);
      var body = JSON.stringify(result);
-     console.log('body', body);
 
      var params = {
           Bucket: S3_bucket,
