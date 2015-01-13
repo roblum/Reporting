@@ -1,5 +1,7 @@
+var SQL_DB     = process.env.SQL_DB;
+
 exports.searchDB = function(reqDomain, connection, table){
-     var select = 'SELECT id FROM heroku_b060aa6180054ee.' + table + ' WHERE Domain = "' + reqDomain + '"'
+     var select = 'SELECT id FROM ' + SQL_DB + '.' + table + ' WHERE Domain = "' + reqDomain + '"'
 
      connection.query(select, function(err, result) {
           if (err) throw err;
@@ -17,7 +19,7 @@ exports.searchDB = function(reqDomain, connection, table){
 }
 
 function writeToDB(reqDomain, connection, table){
-     var insertion = 'INSERT into heroku_b060aa6180054ee.' + table + ' (domain, count) VALUES ("' + reqDomain + '", 1)';
+     var insertion = 'INSERT into ' + SQL_DB + '.' + table + ' (domain, count) VALUES ("' + reqDomain + '", 1)';
 
      connection.query(insertion, function(err, result){
           if (err) throw err;
