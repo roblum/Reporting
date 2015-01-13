@@ -13,22 +13,31 @@ AWS.config.update({
 var s3              = new AWS.S3();
 var date            = new Date().toDateString().replace(/\s/g, '_');
 
-var connection = sql_connect.connect();
-var body = JSON.stringify(DB.reportsDB(connection, 'version1'));
+var sqlFetch = function(){
+     var connection = sql_connect.connect();
 
-console.log('body', body);
-
-var params = {
-     Bucket: S3_bucket,
-     Body: body,
-     Key: 'roblum/Content_API/reports/' + date + '.json',
+     DB.reportsDB(connection, 'version1', s3Upload)
 }
 
-s3.upload(params, function(err, data){
-     if (err){
-          console.log(err);
-     } else{
-          console.log(data);
+function s3Upload(result){
+     var body = JSON.stringify(result);
+     console.log('body', body);
+
+     var params = {
+          Bucket: S3_bucket,
+          Body: body,
+          Key: 'roblum/Content_API/reports/' + date + '.json',
      }
-});
+
+     s3.upload(params, function(err, data){
+          if (err){
+               console.log(err);
+          } else{
+               console.log(data);
+          }
+     });
+}
+
+
+
 
