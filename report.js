@@ -1,0 +1,1 @@
+console.log(process.env.CLEARDB_DATABASE_URL);
