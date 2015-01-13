@@ -13,11 +13,8 @@ AWS.config.update({
 var s3              = new AWS.S3();
 var date            = new Date().toDateString().replace(/\s/g, '_');
 
-var sqlFetch = function(){
-     var connection = sql_connect.connect();
-
-     DB.reportsDB(connection, 'version1', s3Upload)
-}
+var connection = sql_connect.connect();
+DB.reportsDB(connection, 'version1', s3Upload)
 
 function s3Upload(result){
      var body = JSON.stringify(result);
