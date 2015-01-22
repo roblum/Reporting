@@ -42,7 +42,7 @@ function writeToDB(reqDomain, connection, table){
 }
 
 function increment(reqDomain, connection, table, id){
-     var update = 'UPDATE ' + table + ' SET Count = Count + 1 WHERE id = ' + id
+     var update = 'UPDATE ' + SQL_DB + '.' + table + ' SET Count = Count + 1 WHERE id = ' + id
 
      connection.query(update, function(err, result){
           if (err) throw err;
