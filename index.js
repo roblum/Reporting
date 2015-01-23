@@ -1,7 +1,7 @@
 var express         = require('express');
 var app             = express();
-var sql_connect     = require('./controllers/sql_connection.js');
-var DB              = require('./controllers/db_queries.js');
+var sql_connect     = require('./modules/sql_connection.js');
+var DB              = require('./modules/db_queries.js');
 var cors            = require('cors');
 
 app.use(cors());

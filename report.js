@@ -2,8 +2,8 @@ var AWS             = require('aws-sdk');
 var S3_key          = process.env.S3_KEY;
 var S3_secret       = process.env.S3_SECRET;
 var S3_bucket       = process.env.S3_BUCKET;
-var sql_connect     = require('./controllers/sql_connection.js');
-var DB              = require('./controllers/db_queries.js');
+var sql_connect     = require('./modules/sql_connection.js');
+var DB              = require('./modules/db_queries.js');
 
 AWS.config.update({
                accessKeyId: S3_key,
