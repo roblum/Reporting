@@ -17,10 +17,6 @@ app.post('/report', function(request, response) {
      response.send('Hello World!');
 
      var connection = sql_connect.connect();
-     console.log("request");
-     console.log(request);
-     console.log("request headers");
-     console.log(request.headers);
      var reqDomain  = (request.query.domain === 'offerpop.com') ? request.headers.referer : request.query.domain;
      var version    = request.query.version
 
